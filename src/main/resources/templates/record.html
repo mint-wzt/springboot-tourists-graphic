@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <title>记录</title>
+</head>
+<body>
+<div class="row">
+    <div class="col offset-2 col-8" style="margin-top: 30px;margin-bottom: 30px">
+        <div class="container text-center">
+            <h4 class="card-title">Record Life</h4>
+        </div>
+    </div>
+</div>
+<form action="/submit-record" method="post">
+    <div class="row">
+        <div class="col offset-2 col-8">
+            <div class="form-group">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Input title..." name="title">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col offset-2 col-8">
+            <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" placeholder="Input content..." name="content"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row d-inline">
+        <div class="form-group form-inline">
+            <button class="btn btn-lg btn-primary btn-block col-1 offset-5" type="submit" style="float: left;margin-right: 10px;" >Submit</button>
+            <button class="btn btn-lg btn-dark btn-block col-1" type="reset">Reset</button>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>

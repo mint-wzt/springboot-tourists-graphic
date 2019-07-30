@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>景点浏览</title>
+    <!-- Bootstrap -->
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script type="text/css" src="/static.css/album.css"></script>
+
+</head>
+<body>
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading" th:text="${city}">Album example</h1>
+        </div>
+    </section>
+    <!--https://b1-q.mafengwo.net/s14/M00/F5/D6/wKgE2l0dvB6ALMVIAA82W2K6azY124.jpg?imageMogr2%2Fthumbnail%2F%21440x300r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21440x300%2Fquality%2F90-->
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" th:each="sight,sightStat:${introPath}">
+                    <a th:href="@{/sightspot(id=${sight.id})}">
+                        <!--<span th:text="${phoPath.get(sightStat.index)}"></span>-->
+                        <!--th:src="@{${phoPath.get(sightStat.index)}}"-->
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top"
+                                 src="https://b1-q.mafengwo.net/s14/M00/F5/D6/wKgE2l0dvB6ALMVIAA82W2K6azY124.jpg?imageMogr2%2Fthumbnail%2F%21440x300r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21440x300%2Fquality%2F90"
+                            >
+                            <div class="card-body">
+                                <p class="card-text" th:text="${sight.name}"></p>
+                                <p class="card-text" th:text="${sight.place}"></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting
+            started guide</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

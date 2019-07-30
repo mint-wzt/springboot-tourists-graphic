@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>我的文章</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">我的文章</h1>
+    </div>
+</section>
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4" th:each="article:${articleList}">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" th:text="${article.getTitle()}">Card title</h4>
+                    <p class="card-text">
+                    <p th:text="'Author: '+${article.getAuthor()}"></p>
+                    <p th:text="'Date: '+${article.getTime()}"></p>
+                    </p>
+                    <a class="btn btn-link card-link" th:href="@{/article-info(id=${article.getArticle_id()})}"
+                       role="button">View details &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+</body>
+</html>

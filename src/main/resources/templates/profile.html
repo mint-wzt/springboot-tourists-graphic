@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>profile</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="row" style="margin-top: 30px">
+    <div class="col col-8 offset-2">
+        <div class="container">
+            <div class="card">
+                <div class="card-header text-center">
+                    <div class="card-title">
+                        <h4>个人信息</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-text text-left" >
+                        <p  th:text="'账号: '+${username}"></p>
+                        <p th:text="'密码: '+${password}"></p>
+                        <p th:text="'身份: '+${role}" ></p>
+                        <p th:text="'邮箱: '+${email}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
